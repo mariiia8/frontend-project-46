@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import genDiff from '../src/index.js';
-
 import { Command } from 'commander';
+import genDiff from '../src/index.js';
 
 const program = new Command();
 
@@ -12,7 +11,13 @@ program
   .option('-f, --format [type]', 'output format', 'stylish')
   .arguments('<filepath1> <filepath2>')
   .action((filepath1, filepath2, options) => {
-    console.log(`Comparing ${filepath1} and ${filepath2} with format: ${options.format}`);
+    try {
+      const diff = genDiff(filepath1, filepath2, options.format);
+      console.log(diff);
+    } catch (error) {
+      console.error(`Error: ${error.message}`);
+      process.exit(1);
+    }
   });
 
 program.showHelpAfterError('(add --help for additional information)');
