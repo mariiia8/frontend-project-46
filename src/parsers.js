@@ -2,9 +2,7 @@ import { readFileSync } from 'fs';
 import { extname, resolve } from 'path';
 import yaml from 'js-yaml';
 
-const getAbsolutePath = (filepath) => {
-  return resolve(process.cwd(), filepath);
-};
+const getAbsolutePath = (filepath) => resolve(process.cwd(), filepath);
 
 const readFile = (filepath) => {
   const absolutePath = getAbsolutePath(filepath);
@@ -23,8 +21,10 @@ const parse = (content, format) => {
   }
 };
 
-export const getData = (filepath) => {
+const getData = (filepath) => {
   const content = readFile(filepath);
   const format = extname(filepath);
   return parse(content, format);
 };
+
+export default getData;

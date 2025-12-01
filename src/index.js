@@ -1,5 +1,5 @@
-import { getData } from './parsers.js';
 import _ from 'lodash';
+import getData from './parsers.js';
 
 const buildDiff = (data1, data2) => {
   const keys1 = Object.keys(data1);
@@ -21,7 +21,7 @@ const buildDiff = (data1, data2) => {
       key,
       value1: data1[key],
       value2: data2[key],
-      type: 'changed'
+      type: 'changed',
     };
   });
 };
@@ -44,7 +44,7 @@ const formatDiff = (diff) => {
   return `{\n${lines.join('\n')}\n}`;
 };
 
-const genDiff = (filepath1, filepath2, format = 'stylish') => {
+const genDiff = (filepath1, filepath2) => {
   const data1 = getData(filepath1);
   const data2 = getData(filepath2);
   const diff = buildDiff(data1, data2);

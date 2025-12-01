@@ -8,7 +8,15 @@
     "gendiff": "./bin/gendiff.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "lint": "npx eslint ."
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {},
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "repository": {
     "type": "git",
@@ -22,7 +30,13 @@
   "homepage": "https://github.com/mariiia8/frontend-project-46#readme",
   "dependencies": {
     "commander": "^14.0.2",
-    "js-yaml": "^4.1.1",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jest": "^29.7.0"
   }
 }
