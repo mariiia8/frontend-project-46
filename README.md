@@ -1,4 +1,2 @@
 [![Actions Status](https://github.com/mariiia8/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mariiia8/frontend-project-46/actions)
 [![CI](https://github.com/mariiia8/frontend-project-46/actions/workflows/ci.yml/badge.svg)](https://github.com/mariiia8/frontend-project-46/actions/workflows/ci.yml)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/YOUR_BADGE_ID/maintainability)](https://codeclimate.com/github/mariiia8/frontend-project-46)
-[![Maintainability](https://api.codeclimate.com/v1/badges/YOUR_BADGE_ID/test_coverage)](https://codeclimate.com/github/mariiia8/frontend-project-46)
