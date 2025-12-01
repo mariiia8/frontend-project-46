@@ -22,6 +22,7 @@
   "homepage": "https://github.com/mariiia8/frontend-project-46#readme",
   "dependencies": {
     "commander": "^14.0.2",
-    "js-yaml": "^4.1.1"
+    "js-yaml": "^4.1.1",
+    "lodash": "^4.17.21"
   }
 }

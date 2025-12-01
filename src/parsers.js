@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { extname, resolve } from 'path';
+import yaml from 'js-yaml';
 
 const getAbsolutePath = (filepath) => {
   return resolve(process.cwd(), filepath);
@@ -11,10 +12,15 @@ const readFile = (filepath) => {
 };
 
 const parse = (content, format) => {
-  if (format === '.json') {
-    return JSON.parse(content);
+  switch (format) {
+    case '.json':
+      return JSON.parse(content);
+    case '.yml':
+    case '.yaml':
+      return yaml.load(content);
+    default:
+      throw new Error(`Unsupported format: ${format}`);
   }
-  throw new Error(`Unsupported format: ${format}. Currently only JSON is supported.`);
 };
 
 export const getData = (filepath) => {
